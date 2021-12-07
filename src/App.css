@@ -9,25 +9,28 @@
   align-items: center;
   justify-content: space-evenly;
 }
-.form-container{
+.form-container {
   width: 100%;
 }
-.table{
+.table {
   width: 90%;
   margin: 20px;
 }
-.ant-table-wrapper{
+.ant-table-wrapper {
   border: 1px solid black;
 }
-.ant-table-thead > tr >th{
+.ant-table-thead > tr > th {
   color: white;
-  background: #FF4E7B !important;
+  background: #ff4e7b !important;
 }
 .ant-table-tbody > tr {
   color: white;
   background: #3071b9 !important;
-  }
-  .ant-table-tbody > tr:hover{
-    color: #3071b9;
-    background: white !important;
-  }
+}
+.ant-table-tbody > tr:hover {
+  color: #3071b9;
+  background: white !important;
+}
+.card {
+  margin: 40px;
+}

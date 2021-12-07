@@ -11,7 +11,7 @@ export function* apiSaga(payload) {
   try {
     const covid = yield call(covidFetch, payload.country, payload.from, payload.to);
     const names = yield call(countryNames);
-    const data = {countries_case:covid,countries_name:names.Countries};
+    const data = {countries_case:covid,countries_name:names.Countries, global_case:names.Global};
 
     yield put(apiSuccess(data));
   } catch (error) {
