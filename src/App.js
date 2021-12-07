@@ -4,7 +4,7 @@ import { apiRequest } from "./store/actions";
 import { Table, DatePicker, AutoComplete, Card } from "antd";
 import "./App.css";
 import "antd/dist/antd.css";
-import Nodata from "./noData";
+import Nodata from "./components/NoData/noData";
 
 const { RangePicker } = DatePicker;
 

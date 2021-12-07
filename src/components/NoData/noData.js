@@ -1,6 +1,6 @@
 import React from "react";
 import "./noData.css";
-import nodata from "./nodata.png"
+import nodata from "../../assets/images/nodata.png"
 
 const Nodata = () => {
   return (
