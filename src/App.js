@@ -51,6 +51,7 @@ function App() {
     { title: "Country", dataIndex: "Country", key: "name" },
     { title: "Cases", dataIndex: "Cases", key: "confirm" },
     { title: "Date", dataIndex: "Date", key: "date" },
+    { title: "Status", dataIndex: "Status", key: "status" },
   ];
   const gridStyle = {
     width: "33%",
