@@ -5,6 +5,7 @@ import { Table, DatePicker, AutoComplete, Card } from "antd";
 import "./App.css";
 import "antd/dist/antd.css";
 import Nodata from "./components/NoData/noData";
+import virus from "./assets/images/virus.png"
 
 const { RangePicker } = DatePicker;
 
@@ -62,6 +63,7 @@ function App() {
     <div className="container">
       <div className="header">
         <h1>COVID 19 APP</h1>
+        <img src={virus} alt="covid 19 image" className="header-image"/>
       </div>
       <div className="card">
         <Card title="GLOBAL CASE" style={{ textAlign: "center" }}>

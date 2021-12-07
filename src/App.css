@@ -38,8 +38,29 @@
   border-radius: 5px;
 }
 
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-image {
+  width: 100px;
+  animation: header-image infinite 20s linear;
+}
+
 .header > h1 {
   color: #ff4e7b;
   font-weight: bold;
   letter-spacing: 5px;
+}
+
+@keyframes header-image{
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
