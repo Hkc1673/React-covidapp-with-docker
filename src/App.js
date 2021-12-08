@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { apiRequest } from "./store/actions";
-import { Table, DatePicker, AutoComplete, Card } from "antd";
+import { Table, DatePicker, AutoComplete, Button } from "antd";
 import "./App.css";
 import "antd/dist/antd.css";
-import Nodata from "./components/NoData/noData";
-import virus from "./assets/images/virus.png"
+import Nodata from "./components/NoData";
+import virus from "./assets/images/virus.png";
+import SummaryCard from "./components/Card";
 
 const { RangePicker } = DatePicker;
 
@@ -21,6 +22,7 @@ function App() {
 
   useEffect(() => {
     getTable();
+    // eslint-disable-next-line
   }, []);
 
   const getTable = () => {
@@ -54,44 +56,15 @@ function App() {
     { title: "Date", dataIndex: "Date", key: "date" },
     { title: "Status", dataIndex: "Status", key: "status" },
   ];
-  const gridStyle = {
-    width: "33%",
-    textAlign: "center",
-  };
 
   return (
     <div className="container">
       <div className="header">
         <h1>COVID 19 APP</h1>
-        <img src={virus} alt="covid 19 image" className="header-image"/>
+        <img src={virus} alt="covid19" className="header-image" />
       </div>
       <div className="card">
-        <Card title="GLOBAL CASE" style={{ textAlign: "center" }}>
-          <Card.Grid style={gridStyle}>
-            <h4>New Confirmed</h4>
-            <p>{global_case.NewConfirmed}</p>
-          </Card.Grid>
-          <Card.Grid style={gridStyle}>
-            <h4>Total Confirmed</h4>
-            <p>{global_case.TotalConfirmed}</p>
-          </Card.Grid>
-          <Card.Grid style={gridStyle}>
-            <h4>New Deaths</h4>
-            <p>{global_case.NewDeaths}</p>
-          </Card.Grid>
-          <Card.Grid style={gridStyle}>
-            <h4>Total Deaths</h4>
-            <p>{global_case.TotalDeaths}</p>
-          </Card.Grid>
-          <Card.Grid style={gridStyle}>
-            <h4>New Recovered</h4>
-            <p>{global_case.NewRecovered}</p>
-          </Card.Grid>
-          <Card.Grid style={gridStyle}>
-            <h4>Total Recovered</h4>
-            <p>{global_case.TotalRecovered}</p>
-          </Card.Grid>
-        </Card>
+        <SummaryCard globalCase={global_case} />
       </div>
       <div className="form-container">
         <form onSubmit={onSubmit} className="form">
@@ -121,7 +94,9 @@ function App() {
             </AutoComplete>
           </div>
           <div>
-            <button type="submit">Search</button>
+            <Button htmlType="submit" type="primary" size="large">
+              Search
+            </Button>
           </div>
         </form>
       </div>
