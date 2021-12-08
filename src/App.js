@@ -5,8 +5,8 @@ import { Table, DatePicker, AutoComplete, Button } from "antd";
 import "./App.css";
 import "antd/dist/antd.css";
 import Nodata from "./components/NoData";
-import virus from "./assets/images/virus.png";
 import SummaryCard from "./components/Card";
+import Header from "./components/Header";
 
 const { RangePicker } = DatePicker;
 
@@ -34,7 +34,7 @@ function App() {
     setCountry(result);
   };
 
-  function onChange(value, dateString) {
+  const onChange = (value, dateString) => {
     if (value !== null && value !== undefined) {
       const dateobj1 = new Date(value[0]._d);
       const dateobj2 = new Date(value[1]._d);
@@ -43,12 +43,12 @@ function App() {
       setFrom(startDate);
       setTo(endDate);
     }
-  }
+  };
 
-  function onSubmit(e) {
+  const onSubmit = (e) => {
     e.preventDefault();
     getTable();
-  }
+  };
 
   const columns = [
     { title: "Country", dataIndex: "Country", key: "name" },
@@ -59,10 +59,7 @@ function App() {
 
   return (
     <div className="container">
-      <div className="header">
-        <h1>COVID 19 APP</h1>
-        <img src={virus} alt="covid19" className="header-image" />
-      </div>
+      <Header />
       <div className="card">
         <SummaryCard globalCase={global_case} />
       </div>
