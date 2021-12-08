@@ -1,0 +1,20 @@
+.table {
+    width: 90%;
+    margin: 20px;
+  }
+.ant-table-wrapper {
+  box-shadow: 0px 15px 45px rgba(50, 50, 93, 0.1), 0px 5px 15px rgba(0, 0, 0, 0.07);
+  border-radius: 5px;
+}
+.ant-table-thead > tr > th {
+  color: white;
+  background: #ff4e7b !important;
+}
+.ant-table-tbody > tr {
+  color: white;
+  background: #3071b9 !important;
+}
+.ant-table-tbody > tr:hover {
+  color: #3071b9;
+  background: white !important;
+}  
