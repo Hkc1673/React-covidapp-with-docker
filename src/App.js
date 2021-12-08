@@ -5,11 +5,12 @@ import SummaryCard from "./components/Card";
 import Header from "./components/Header";
 import FormBar from "./components/Form";
 import DataTable from "./components/DataTable";
+import Loading from "./components/Loading";
 import "./App.css";
 import "antd/dist/antd.css";
 
 function App() {
-  const { countries_case, countries_name, global_case } = useSelector(
+  const { countries_case, countries_name, global_case, fetching } = useSelector(
     (state) => state
   );
 
@@ -40,7 +41,10 @@ function App() {
   const onSubmit = () => {
     getTable();
   };
-
+console.log("fetching", fetching)
+if(fetching){
+  return <Loading />
+}
   return (
     <div className="container">
       <Header />
